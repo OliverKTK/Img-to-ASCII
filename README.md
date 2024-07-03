@@ -13,13 +13,13 @@ $ git clone git@github.com:OliverKTK/Img-to-ASCII.git
 ``` 
 charWidth = 11
 charHeight = 13
-scale = 0.1 # where 1 is a 1:1 scale
-path = 'image.jpg'
+scale = 0.1 # Where 1 is a 1:1 scale
+name = 'imageName'
+path = name+ '.jpg' # Change '.jpg' if using another file extension
 fontPath = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
-nameOutput = 'output'
 ```
 
 3. Run the code
-	An image output will be created in the code directory
+	An image output will be created in the code directory with the name `name`_ascii.png
 
 ![alt text](https://github.com/OliverKTK/Img-to-ASCII/blob/main/monalisa_ascii.png?raw=true)
