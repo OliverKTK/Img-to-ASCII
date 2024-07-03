@@ -4,11 +4,11 @@ import math
 # Variables used for the output image
 charWidth = 11
 charHeight = 13
-scale = 0.1
-ImgPath = 'monalisa.jpg'
-fontPath = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
-nameOutput = 'output'
+scale = 0.05
 
+name = 'name'
+ImgPath = name + '.jpg'
+fontPath = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
 
 # Characters used for the ascii art
 # chars = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,^`. "[::-1]
@@ -52,7 +52,10 @@ for i in range(width):
         r, g, b = pix[i,j]
         value = int((r+g+b)/3)
         d.text((i*charWidth, j*charHeight), getChar(value), font= font, fill = (r, g, b))
+    if(i % 10 == 0): 
+        print(f"{int((i/width)*100)}%")
 
 # Saves the result
-outputImg.save(nameOutput+'.png')
+outputImg.save(name+'_ascii.png')
+print("Converted Image to ASCII")
 
